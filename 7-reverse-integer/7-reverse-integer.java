@@ -1,16 +1,16 @@
 class Solution {
     public int reverse(int x) {
         boolean isNegative = false;
-        int newVal = 0;
-        int oldVal = x;
+        int newVal;
         
-        if (oldVal < 0) {
-            oldVal *= -1;
+        if (x < 0) {
+            x *= -1;
             isNegative = true;
         }
+        
         ArrayList<Character> digits = new ArrayList<>();
         
-        char[] oldValArr = String.valueOf(oldVal).toCharArray();
+        char[] oldValArr = String.valueOf(x).toCharArray();
         
         char[] newValArr = new char[oldValArr.length];
         
