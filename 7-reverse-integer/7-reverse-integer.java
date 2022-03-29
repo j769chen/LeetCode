@@ -25,11 +25,6 @@ class Solution {
             return 0;
         }
         
-
-        if(newValArr.length != oldValArr.length) {
-            return 0;
-        }
-        
             
         if(isNegative) {
             newVal *= -1;
