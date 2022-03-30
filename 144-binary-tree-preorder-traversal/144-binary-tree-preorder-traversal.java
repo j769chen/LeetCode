@@ -15,12 +15,14 @@
  */
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        
         Stack<TreeNode> nodes = new Stack<>();
         List<Integer> returnVal = new ArrayList<>();
         
-        if (root == null) {
-            return returnVal;
-        }
+       
         
         nodes.push(root);
         
