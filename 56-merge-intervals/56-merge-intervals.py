@@ -4,7 +4,7 @@ class Solution:
             return intervals
         
         i = 1
-        intervals = sorted(intervals, key=lambda l:l[0])
+        intervals.sort()
         currMin = intervals[0][0]
         currMax = intervals[0][1]
         returnList = []
