@@ -1,23 +1,11 @@
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        if len(intervals) == 1:
-            return intervals
-        
-        i = 1
+   def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         intervals.sort()
-        currMin = intervals[0][0]
-        currMax = intervals[0][1]
-        returnList = []
-    
-        while i < len(intervals):
-                      
-            if intervals[i][0] > currMax:
-                returnList.append([currMin, currMax])
-                currMin = intervals[i][0]
-                
-            if intervals[i][1] > currMax:
-                currMax = intervals[i][1]
-            i += 1
-        
-        returnList.append([currMin, currMax])
-        return returnList
+        arr=[intervals[0]]
+        for i in intervals:
+            a=arr[-1]
+            if i[0]<=a[1]:
+                arr[-1]=[min(a[0],i[0]),max(a[1],i[1])]
+            else:
+                arr.append(i)
+        return arr
