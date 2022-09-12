@@ -1,30 +1,22 @@
-class Solution:
-    def setZeroes(self, matrix: List[List[int]]) -> None:
-        
-        
+class Solution(object):
+    def setZeroes(self, matrix):
         """
-        Do not return anything, modify matrix in-place instead.
+        :type matrix: List[List[int]]
+        :rtype: void Do not return anything, modify matrix in-place instead.
         """
-        
-        # two arrays to track each row/column and if there has been a 0 in it, this way
-        # we skip some unecessary operations
-        rows = [0] * len(matrix)
-        columns = [0] * len(matrix[0])
-        
-        
-        for i in range (len(matrix)):
-            for j in range(len(matrix[0])):
+        R = len(matrix)
+        C = len(matrix[0])
+        rows, cols = set(), set()
+
+        # Essentially, we mark the rows and columns that are to be made zero
+        for i in range(R):
+            for j in range(C):
                 if matrix[i][j] == 0:
-                    rows[i] = 1
-                    columns[j] = 1
-        
-        for i in range (len(matrix)):
-            for j in range(len(matrix[0])):
-                if rows[i] == 1:
-                    for k in range(len(matrix[0])):
-                            matrix[i][k] = 0
-                if columns[j] == 1:
-                    for k in range(len(matrix)):
-                            matrix[k][j] = 0
-        
-                
+                    rows.add(i)
+                    cols.add(j)
+
+        # Iterate over the array once again and using the rows and cols sets, update the elements
+        for i in range(R):
+            for j in range(C):
+                if i in rows or j in cols:
+                    matrix[i][j] = 0
