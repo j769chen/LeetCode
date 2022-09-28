@@ -3,10 +3,6 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        
-        # if len(nums) < 2: 
-        #     return
-        
     
         curr, prev = len(nums) - 2, len(nums) - 1
         
@@ -14,7 +10,7 @@ class Solution:
             curr -= 1
             prev -= 1
             
-            # if the list's length is less than two or if all elements are equal
+            #if both pointers run off the end, return
             if prev < 0:
                 return
         
