@@ -1,4 +1,7 @@
 class Solution:
+    # go through the 2d grid, run dfs/bfs on every element while marking visited nodes
+    # each time an initial dfs/bfs call returns, it means we've found an island so we increment 
+    # the number of islands counter
     def numIslands(self, grid: List[List[str]]) -> int:
         def dfs(grid: List[List[str]], startingX, startingY):
             if startingX < 0 or startingY < 0 or startingX >= len(grid) or startingY >= len(grid[0]) or grid[startingX][startingY] != "1":
@@ -12,12 +15,10 @@ class Solution:
             dfs(grid, startingX, startingY-1)
 #             stack = []
             
-#             stack.append((startingX, startingY))
+#             stack.append((startingY, startingX))
             
 #             while len(stack) > 0:
 #                 curr = stack.pop(0)
-#                 print(grid)
-#                 print("")
 #                 grid[curr[1]][curr[0]] = "2"
                 
 #                 if curr[1] - 1 > 0 and int(grid[curr[1] - 1][curr[0]]) == 1:
@@ -31,7 +32,8 @@ class Solution:
                     
 #                 if curr[0] + 1 < len(grid[0]) and int(grid[curr[1]][curr[0] + 1]) == 1:
 #                     stack.append((curr[1], curr[0] + 1))
-            
+                
+#                 print(stack)
             
             
         numIslands = 0
