@@ -24,11 +24,14 @@ class Solution:
         returnList = []
 
         while i < len(intervals):
-
+            # if the next interval does not intersect with our current merge values,
+            # add a new interval that is [currMin, currMax] to the new list, 
+            # start again at the next interval
             if intervals[i][0] > currMax:
                 returnList.append([currMin, currMax])
                 currMin = intervals[i][0]
-
+            
+            # if the next interval overlaps with our current, we update currMax to be the next intervals max
             if intervals[i][1] > currMax:
                 currMax = intervals[i][1]
             i += 1
