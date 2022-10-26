@@ -13,6 +13,7 @@ class Solution:
                 if newInterval[0] >= intervals[i][0]:
                     intervals.insert(i+1, newInterval)
         
+        # if there is only one interval, we can just return it
         if len(intervals) == 1:
                 return intervals
         
