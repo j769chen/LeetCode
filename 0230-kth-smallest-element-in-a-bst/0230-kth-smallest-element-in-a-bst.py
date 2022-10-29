@@ -9,12 +9,11 @@ class Solution:
         def inorder(curr, lis):
             if curr is None:
                 return
-            if curr.left != None:
-                inorder(curr.left, lis)
+
+            inorder(curr.left, lis)
             lis.append(curr.val)
             
-            if curr.right != None:
-                inorder(curr.right, lis)
+            inorder(curr.right, lis)
         
         lis = []
         
