@@ -12,8 +12,10 @@ class Solution(object):
         // foreach [x,y] pair,  dfs (curr, visited, string[1:])
 
         """
+        # find start letters, do dfs on each start letter, check each adjacent element that isnt visited or out of bounds
+        # when we try to go back from a path, we remove the current element from the path (line 26)
+        # we check if all of the letters in the word are in the board in order to avoid unecessary searches
         def dfs(curr, visited, word):
-            # print("visited", visited)
             i = curr[0]
             j = curr[1]
             if not word:
@@ -43,8 +45,7 @@ class Solution(object):
         for char in word:
             if char not in charsInBoard:
                 return False
-        
-        # print("starts", starts)
+
         for i in range(len(starts)):
             visited = set()
             if dfs(starts[i], visited, word):
