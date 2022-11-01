@@ -27,6 +27,7 @@ class Solution(object):
         
         
         # find possible starting points
+        starts = []
         charsInBoard = {}
 
             
@@ -36,16 +37,16 @@ class Solution(object):
                     charsInBoard[board[i][j]] += 1
                 else:
                     charsInBoard[board[i][j]] = 1
-                # if board[i][j] == word[0]:
-                #     starts.append((i,j))
+                if board[i][j] == word[0]:
+                    starts.append((i,j))
                     
         for char in word:
             if char not in charsInBoard:
                 return False
         
-        for i in range(len(board)):
-            for j in range(len(board[i])):
-                visited = set()
-                if dfs((i,j), visited, word):
-                    return True
+        # print("starts", starts)
+        for i in range(len(starts)):
+            visited = set()
+            if dfs(starts[i], visited, word):
+                return True
         return False
