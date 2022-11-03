@@ -15,10 +15,13 @@ class Solution:
         
         sol = []
         
-        
+        # bfs outer loop
         while queue:
             currArray = []
             curSubarray = []
+            
+            #starting with the root level, we take all nodes from that level and append the vals
+            # to curSubarray, then we append all children into the queue and repeat
             while queue:
                 currArray.append(queue.pop(0))
             
