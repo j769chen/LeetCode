@@ -7,6 +7,8 @@ class Solution:
         for i in range(len(board)):
             for j in range(len(board[i])):
                 if board[i][j] != ".":
+                    # we basically have a set for each row, column and 3x3 square that keeps track of 
+                    # what numbers weve seen in those, if we have a duplicate, the sudoku is invalid
                     if board[i][j] in rows[i] or board[i][j] in cols[j] or board[i][j] in boxes[i//3][j//3]:
                         return False
 
