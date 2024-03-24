@@ -20,9 +20,9 @@ class Solution:
         for i in elts.keys():
             buckets[elts[i]].append(i)
         
-        kElts = []
+        topKElts = []
         for i in range(len(buckets)-1, 0, -1):
             for j in buckets[i]:
-                kElts.append(j)
-                if len(kElts) == k:
-                    return kElts
+                topKElts.append(j)
+                if len(topKElts) == k:
+                    return topKElts
