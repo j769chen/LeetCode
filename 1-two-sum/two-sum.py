@@ -1,15 +1,8 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        dic = {}
-        count = 0
-        for i in nums:
-            if (target-i) in dic.keys():
-                return [dic[target-i], count]
-            else:
-                dic[i] = count
-            count += 1 
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        imap = {}
+
+        for i in range(len(nums)):
+            if target - nums[i] in imap:
+                return [i, imap[target - nums[i]]]
+            imap[nums[i]] = i
