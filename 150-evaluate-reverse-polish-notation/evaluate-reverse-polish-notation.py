@@ -1,7 +1,7 @@
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
-        print(ceil(6/-132))
+
         for t in tokens:
             if t != '+' and t != '-' and t != '*' and t != '/':
                 stack.append(int(t))
