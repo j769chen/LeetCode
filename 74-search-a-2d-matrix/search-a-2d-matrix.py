@@ -1,6 +1,7 @@
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        
+        # Binary Search but twice. First, we binary search the arrays in the matrices to find out which array our target is in. 
+        # Once we find that array, we just do binary search for one array.
         top = 0
         bottom = len(matrix) - 1
 
