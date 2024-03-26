@@ -5,7 +5,6 @@ class Solution:
 
         while top <= bottom:
             mid = bottom-top//2
-            print(mid)
             if target <= matrix[mid][-1] and target >= matrix[mid][0]:
                 print(matrix[0])
                 return self.search(matrix[mid], target)
