@@ -1,5 +1,10 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
+        # three arrays, max to the left for elt at idx i, 
+        # max to the right of elt at idx i, 
+        # and one with the min of these values for idx i
+        # the amt of water that can be stored at any given idx is min(maxLeftArr[i], maxRightArr[i]) - height[i]
+        # discard any numbers that are <= 1 when summing
         maxLeft, maxRight = 0,0
         maxLeftArr = [0] * len(height)
         maxRightArr = [0] * len(height)
